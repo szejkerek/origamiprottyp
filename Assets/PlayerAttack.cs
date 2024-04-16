@@ -17,6 +17,10 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         CaputereKey();
+
+        if (target == null)
+            return;
+
         DetectCombo(meleeCombo, AttackMelee);
         DetectCombo(shurikenCombo, ThrowShuriken);
     }
@@ -65,7 +69,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void AttackMelee()
     {
-        // Instantiate the projectile
+        Debug.Log("Melee");
         GameObject projectile = Instantiate(smuga, transform.position, Quaternion.identity);
 
         // Calculate direction towards the target
@@ -79,6 +83,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void ThrowShuriken()
     {
+        Debug.Log("Shuriken");
         GameObject projectile = Instantiate(shuriken, transform.position, Quaternion.identity);
         Vector2 direction = (target.transform.position - transform.position).normalized;
         Rigidbody2D rbProjectile = projectile.GetComponent<Rigidbody2D>();

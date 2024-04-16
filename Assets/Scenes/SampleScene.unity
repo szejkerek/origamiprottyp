@@ -311,10 +311,10 @@ GameObject:
   m_Component:
   - component: {fileID: 905680628}
   - component: {fileID: 905680627}
-  - component: {fileID: 905680630}
   - component: {fileID: 905680629}
-  - component: {fileID: 905680631}
   - component: {fileID: 905680632}
+  - component: {fileID: 905680630}
+  - component: {fileID: 905680631}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -383,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 905680626}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4402409, y: -1.8210583, z: 0}
+  m_LocalPosition: {x: 6.662, y: -1.8210583, z: 0}
   m_LocalScale: {x: 0.65529, y: 0.65529, z: 0.65529}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -508,6 +508,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -589,6 +590,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a811bd74fa59a4349b766717110c5fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &983962449
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,9 +948,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1505341888}
   - component: {fileID: 1505341887}
-  - component: {fileID: 1505341889}
   - component: {fileID: 1505341891}
   - component: {fileID: 1505341890}
+  - component: {fileID: 1505341889}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1026,7 +1039,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c347efa7df495454481e00cce448fdc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 905680628}
   Health: 19
+  triggerRange: 4.88
+  patrolSpeed: 1.89
+  patrolingRange: 3
+  attackRange: 2.58
+  currentState: 0
 --- !u!61 &1505341890
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1059,7 +1078,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19, y: 0.5}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1070,7 +1089,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.83, y: 2.89}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
 --- !u!50 &1505341891
 Rigidbody2D:
