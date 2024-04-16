@@ -6,6 +6,7 @@ public enum EnemyState
     Patroling,
     Triggered,
 }
+// Pozdro
 
 public class Enemy : MonoBehaviour
 {
